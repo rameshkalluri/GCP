@@ -110,6 +110,57 @@ gcloud compute instance-groups managed set-autoscaling web-mig \
 
 ---
 
+## 5. Unmanaged Instance Groups (UMIGs)
+
+An **Unmanaged Instance Group (UMIG)** is just a **bag of existing VMs grouped together**
+that **you manage by hand**. There's **no template, no autoscaling, no autohealing**.
+
+> **Analogy:** If a MIG is a **self-managing team of identical cashiers** (a manager
+> auto-hires, replaces, and retrains them), a UMIG is a **fixed group of different,
+> hand-picked workers** you supervise yourself. Nobody gets auto-hired or auto-replaced —
+> if one quits, **you** sort it out. You just **clip them together** so a load balancer
+> can send work to the whole group.
+
+### Key facts
+- VMs can be **different** (different machine types, images, configs).
+  - *Analogy:* a mixed team — a cashier, a bagger, a greeter — not clones.
+- **No autoscaling, no autohealing, no rolling updates** — all manual.
+- Mainly used to **group existing VMs behind a load balancer**.
+- *Analogy:* a **name list taped to the wall** — "these specific people are on this team."
+
+### When to use a UMIG
+- You have **pre-existing, individually-configured VMs** you want behind one load balancer.
+- You need VMs that are **not identical** in the same group.
+- Quick/legacy setups where you don't need scaling or healing.
+- 👉 For most modern, scalable apps, **prefer a MIG**.
+
+---
+
+## MIG vs UMIG (side by side)
+
+| Feature | **MIG (Managed)** | **UMIG (Unmanaged)** |
+|---|---|---|
+| VMs are... | **Identical** (from a template) | **Different**, hand-picked |
+| Created from a **template** | ✅ Yes | ❌ No |
+| **Autoscaling** | ✅ Yes | ❌ No |
+| **Autohealing** | ✅ Yes | ❌ No |
+| **Rolling updates** | ✅ Yes | ❌ No |
+| Multi-zone (regional) | ✅ Yes | ❌ No (zonal only) |
+| Who manages the VMs | **GCP (the manager)** | **You, manually** |
+| Analogy | Self-managing team of **clones** | Hand-picked **mixed** team you supervise |
+| Best for | Scalable, self-healing production apps | Grouping existing/odd VMs behind an LB |
+
+```bash
+# Create an unmanaged instance group and add existing VMs to it
+gcloud compute instance-groups unmanaged create my-umig --zone=asia-south1-a
+gcloud compute instance-groups unmanaged add-instances my-umig \
+  --instances=vm-1,vm-2 --zone=asia-south1-a
+```
+
+> Rule of thumb: **MIG = automatic & identical; UMIG = manual & mixed.**
+
+---
+
 ## How it all fits together
 ```
 Startup Script  →  baked into  →  Instance Template  →  used by  →  Managed Instance Group
@@ -127,3 +178,6 @@ Startup Script  →  baked into  →  Instance Template  →  used by  →  Mana
 - **Instance template** = a cookie-cutter recipe for identical VMs.
 - **Managed Instance Group (MIG)** = a self-managing team of VMs that **autoscales**,
   **self-heals**, and does **rolling updates** — use a **regional** MIG for production.
+- **Unmanaged Instance Group (UMIG)** = a manual bag of **different, hand-picked VMs**
+  grouped behind a load balancer — **no autoscaling/healing**. **MIG = automatic & identical;
+  UMIG = manual & mixed.**
