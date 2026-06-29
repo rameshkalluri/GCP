@@ -13,6 +13,7 @@ Notes for Day 4 of the [10-Day GCP Learning Plan](../GCP-10-Day-Learning-Plan.md
 2. [Firewall Rules & Routes](02-firewall-rules-and-routes.md) — gates and road signs.
 3. [IP Addresses & Cloud NAT](03-ip-addresses-and-nat.md) — house addresses & going online privately.
 4. [Load Balancing](04-load-balancing.md) — the traffic cop spreading the load.
+5. [DNS, CDN & Connectivity](05-dns-cdn-and-connectivity.md) — phone book, edge caching, peering/Shared VPC, VPN/Interconnect, Private Google Access.
 
 ## Day 4 Goals
 - [ ] Explain what a VPC and subnet are in plain English.

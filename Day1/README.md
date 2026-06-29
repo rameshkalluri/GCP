@@ -9,6 +9,7 @@ Notes for Day 1 of the [10-Day GCP Learning Plan](../GCP-10-Day-Learning-Plan.md
 4. [IAM Basics](04-iam-basics.md) — members, roles, policies, service accounts.
 5. [Billing](05-billing.md) — billing accounts, budgets, alerts, cost control.
 6. [Console & Cloud Shell](06-console-and-cloud-shell.md) — UI, gcloud CLI, Cloud Shell.
+7. [APIs & Services](07-apis-and-services.md) — enabling APIs, quotas (install the "apps").
 
 ## Day 1 Goals
 - [ ] Understand cloud service models and GCP's place in them.

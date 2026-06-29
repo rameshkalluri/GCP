@@ -10,6 +10,7 @@ Notes for Day 2 of the [10-Day GCP Learning Plan](../GCP-10-Day-Learning-Plan.md
 1. [IAM Deep Dive](01-iam-deep-dive.md) — members, roles, policies (the hotel analogy).
 2. [Service Accounts & Keys](02-service-accounts-and-keys.md) — IDs for robots/apps.
 3. [Least Privilege & Security Best Practices](03-least-privilege-and-best-practices.md).
+4. [Audit Logs & Org Policy](04-audit-logs-and-org-policy.md) — the record (CCTV) + guardrails.
 
 ## Day 2 Goals
 - [ ] Explain who/what/where of IAM in plain English.

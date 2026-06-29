@@ -11,7 +11,8 @@ Notes for Day 3 of the [10-Day GCP Learning Plan](../GCP-10-Day-Learning-Plan.md
 1. [Compute Engine Basics](01-compute-engine-basics.md) — what a VM is, machine types.
 2. [Images & Disks](02-images-and-disks.md) — operating systems & storage for VMs.
 3. [Spot/Preemptible VMs & Pricing](03-spot-vms-and-pricing.md) — cheaper VMs, discounts.
-4. [Metadata, Startup Scripts & Instance Groups](04-metadata-startup-and-groups.md) — automation & scaling.
+4. [Metadata, Startup Scripts & Instance Groups](04-metadata-startup-and-groups.md) — automation & scaling (MIG & UMIG).
+5. [VM Access & Special Options](05-vm-access-and-special-options.md) — OS Login, Shielded/Confidential VMs, GPUs/TPUs, sole-tenant.
 
 ## Day 3 Goals
 - [ ] Explain what a VM is and how to size one (machine types).

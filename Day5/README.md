@@ -12,6 +12,7 @@ Notes for Day 5 of the [10-Day GCP Learning Plan](../GCP-10-Day-Learning-Plan.md
 2. [Storage Classes & Lifecycle](02-storage-classes-and-lifecycle.md) — hot vs cold shelves, auto-tidying.
 3. [Disks & Filestore](03-disks-and-filestore.md) — hard drives for VMs & shared folders.
 4. [Choosing the Right Storage](04-choosing-the-right-storage.md) — a simple decision guide.
+5. [Encryption & Retention](05-encryption-and-retention.md) — key management (CMEK/KMS) & retention/holds/Bucket Lock.
 
 ## Day 5 Goals
 - [ ] Understand what object storage (buckets) is and when to use it.
